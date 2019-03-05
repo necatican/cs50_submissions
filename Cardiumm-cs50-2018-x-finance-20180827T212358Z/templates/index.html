@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Shares</th>
+<th>Price</th>
+<th>TOTAL</th>
+</tr>
+</thead>
+<tfoot>
+<td colspan="4"></td>
+<td>{{ networth }} </td>
+</tfoot>
+    <tbody>
+        {% for row in rows %}
+            <tr>
+                {% for r in row %}
+
+                    <td> {{ r }} </td>
+
+                {% endfor %}
+            </tr>
+        {% endfor %}
+</tbody>
+</table>
+{% endblock %}

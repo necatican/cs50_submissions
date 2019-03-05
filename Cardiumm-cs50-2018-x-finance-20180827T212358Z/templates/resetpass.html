@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Reset your password
+{% endblock %}
+
+{% block main %}
+    <form action="/resetpassw" method="post">
+        <div> Trying to reset password of <input type="text" name="username" value= {{ username }}  readonly></div>
+        <div> Secret question: {{ question }}</div>
+        <div class = "form-group">
+            <input class ="form-control" name="secretkey" placeholder= "Secret question answer" type="text"/>
+        </div>
+        <div class = "form-group">
+            <input class ="form-control" name="password" placeholder= "New password" type="password"/>
+        </div>
+        <div>Currently it's not possible to reset your password without a secret question</div>
+
+        <button class="btn btn-primary" type="submit">Reset my password</button>
+    </form>
+{% endblock %}

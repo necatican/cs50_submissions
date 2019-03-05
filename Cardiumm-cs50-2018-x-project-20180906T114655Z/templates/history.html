@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Target Currency</th>
+<th>Exchanged Currency</th>
+<th>Amount</th>
+<th>Unit price</th>
+<th>Total</th>
+<th>Date</th>
+<th>Acquisition Method</th>
+</tr>
+</thead>
+    <tbody>
+        {% for row in rows %}
+            <tr>
+                {% for r in row %}
+
+                    <td> {{ r }} </td>
+
+                {% endfor %}
+            </tr>
+        {% endfor %}
+</tbody>
+</table>
+{% endblock %}
+

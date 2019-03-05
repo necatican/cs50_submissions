@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <script src="/static/login.js"></script>
+    <form id="login" action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" id="usrn" name="username" placeholder="Username" type="text" required/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" id ="psw" placeholder="Password" type="password" required/>
+            <small id="passwordHelpBlock" class="form-text text-muted">Wrong username or password</small>
+        </div>
+        <button class="btn btn-primary" id="submit" type="submit">Log In</button>
+        <div> Click <a href="/resetpass">here</a> to reset your password.</div>
+    </form>
+{% endblock %}

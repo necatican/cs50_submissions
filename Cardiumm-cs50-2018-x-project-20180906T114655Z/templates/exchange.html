@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Exchange
+{% endblock %}
+
+{% block main %}
+    <script src="/static/exchange.js"></script>
+    <div><small id="errorblock" class="form-text text-muted"></small></div>
+    <input class="form-control col-xs-2" id="currency1value" name="currency2value" value= "" required>
+    <select id="firstcurrency" class="form-control" name="symbol">
+    </select>
+
+    <input class="form-control col-xs-2" id="currency2value" name="currency2value" value= "" readonly>
+    <select id="secondcurrency" class="form-control" name="symbol">
+         {% for row in rows %}
+      <option value={{ row.acronym }}> {{ row.acronym }} </option>
+         {% endfor %}
+    </select>
+    <div><small id="currencyrateblock" class="form-text text-muted"></small></div>
+    <small id="exchangeBlock" class="form-text text-muted"></small>
+    <div><button class="btn btn-primary" id="exchange" type="submit">Exchange</button></div>
+{% endblock %}

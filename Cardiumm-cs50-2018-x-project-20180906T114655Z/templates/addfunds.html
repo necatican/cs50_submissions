@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add funds
+{% endblock %}
+
+{% block main %}
+    <script src="/static/addfunds.js"></script>
+    <input class="form-control col-xs-2" id="currency1value" name="currency2value" value= "">
+    <select id="firstcurrency" class="form-control" name="symbol">
+         {% for row in rows %}
+      <option value={{ row.acronym }}> {{ row.acronym }} </option>
+         {% endfor %}
+    </select>
+    <div><small id="currencyrateblock" class="form-text text-muted"></small></div>
+    <div><button class="btn btn-primary" id="addfunds" type="submit">Add Funds</button></div>
+{% endblock %}

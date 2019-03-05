@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Currency</th>
+<th>Balance</th>
+<th>Your Average</th>
+<th>Current Price</th>
+<th>Total</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tfoot>
+<td colspan="4"></td>
+<td>{{ networth }} </td>
+</tfoot>
+    <tbody>
+        {% for row in rows %}
+            <tr>
+                {% for r in row %}
+
+                    <td> {{ r }} </td>
+
+                {% endfor %}
+            </tr>
+        {% endfor %}
+</tbody>
+</table>
+{% endblock %}
